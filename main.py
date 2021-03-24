@@ -8,10 +8,6 @@ parser = WebhookParser(channel_secret="CHANNEL_SECRET")
 
 app = FastAPI()
 
-@app.get("/health")
-def health_check():
-    return {'status': 'OK'}
-
 @app.post("/callback")
 async def callback(request: Request, background_tasks: BackgroundTasks):
     events = parser.parse(
@@ -28,7 +24,7 @@ async def handle_events(events):
         try:
             await line_api.reply_message_async(
                 event.reply_token,
-                TextMessage(text=event.message.text))
+                TextMessage(text="https://www.amazon.co.jp/s?k" + event.message.text))
         except Exception:
             print("Error!")
         
