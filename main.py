@@ -3,8 +3,8 @@ from linebot import WebhookParser
 from linebot.models import TextMessage
 from aiolinebot import AioLineBotApi
 
-line_api = AioLineBotApi(channel_access_token="9k2mygZ1fZU7pNWurCyNzLgABSxTPmbFo6CnYKn8Q5HYGkEh1E2bEMC3sGOC+uTK1q6lXelpiSv0gErHV/z2EHH3ssLzGG6hCm3tvW1E2A55Khpda0fmnTiwLuIqWR+9UopOnGOVvMJy3cZ+nwMNgwdB04t89/1O/w1cDnyilFU=")
-parser = WebhookParser(channel_secret="735773daaef5822c0f2ebf1a28594258")
+line_api = AioLineBotApi(channel_access_token="CHANNEL_ACCESS_TOKEN")
+parser = WebhookParser(channel_secret="CHANNEL_SECRET")
 
 app = FastAPI()
 
